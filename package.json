@@ -1,7 +1,7 @@
 {
     "name": "hr.list",
     "description": "List View for collection",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "peerDependencies": {
         "q": "*",
         "jquery": "*",
