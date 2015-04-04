@@ -37,3 +37,23 @@ list.collection.add({
 });
 ```
 
+#### Filter items
+
+A filter can be defined when creating the list:
+
+```js
+var list = new PostsList({
+    // Display only post with more than 100 likes
+    filter: function(model) {
+        return model.get("likes") > 100;
+    }
+});
+```
+
+Or can be applied at any time:
+
+```js
+list.filter(function(model) {
+    return model.get("tweets") > 100;
+});
+```
