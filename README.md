@@ -1,17 +1,26 @@
-List View for HappyRhino
+hr.list [![Build Status](https://travis-ci.org/HappyRhino/hr.list.png?branch=master)](https://travis-ci.org/HappyRhino/hr.list)
 =============================
 
-[![Build Status](https://travis-ci.org/HappyRhino/hr.list.png?branch=master)](https://travis-ci.org/HappyRhino/hr.list)
+> **View** associated to a **Collection**, containing a item associated with each models in the collection.
 
-List is a **View** associated to a **Collection**, containing a item view associated with each models in the collection.
+## Installation
 
-### Example
+```
+$ npm install hr.list
+```
+
+## Documentation
+
+#### Define a list
+
+Create a list by extending the `ListView` class.
 
 ```js
 var ListView = require("hr.list");
 
 var Posts = require("./collection/posts");
 
+// Represent an item from the collection
 var PostItem = ListView.Item.extend({
     tagName: "li",
 
@@ -21,19 +30,31 @@ var PostItem = ListView.Item.extend({
     }
 });
 
+// Represent the list of PostItem views
 var PostsList = ListView.extend({
     tagName: "ul",
     item: MyListItem,
     collection: Posts
 });
+```
 
+Create an instance from this list with an empty collection:
 
+```js
 var list = new PostsList();
 list.collection.add({
     title: "Hello"
 });
 list.collection.add({
     title: "Hello 2"
+});
+```
+
+Or from an existing collection:
+
+```js
+var list = new PostsList({
+    collection: myPosts
 });
 ```
 
@@ -57,3 +78,6 @@ list.filter(function(model) {
     return model.get("tweets") > 100;
 });
 ```
+
+Clear filter using `list.clearFilter()`.
+
