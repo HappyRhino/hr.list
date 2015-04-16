@@ -1,15 +1,9 @@
 {
     "name": "hr.list",
     "description": "List View for collection",
-    "version": "0.2.0",
-    "peerDependencies": {
-        "q": "*",
-        "jquery": "*",
-        "hr.collection": "*",
-        "hr.view": "*"
-    },
+    "version": "0.3.0",
     "devDependencies": {
-        "hr.mocha": "0.2.0"
+        "hr.mocha": "^0.2.0"
     },
     "repository": {
         "type": "git",
@@ -17,5 +11,11 @@
     },
     "scripts": {
         "test": "./node_modules/.bin/hr-mocha ./tests/index.js"
+    },
+    "dependencies": {
+        "q": "*",
+        "jquery": "*",
+        "hr.collection": "*",
+        "hr.view": "*"
     }
 }
