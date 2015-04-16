@@ -16,6 +16,7 @@
         "q": "*",
         "jquery": "*",
         "hr.collection": "*",
-        "hr.view": "*"
+        "hr.view": "*",
+        "hr.utils": "*"
     }
 }
